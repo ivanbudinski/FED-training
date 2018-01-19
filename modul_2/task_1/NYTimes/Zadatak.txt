@@ -1,0 +1,17 @@
+Napraviti jednostavan web sajt koji korisit NYTimes API.
+
+Pri vrhu stranice treba da postoji input polje za pretragu clanaka i dugme koje aktivira pretragu.
+Ispod input polja i dugmeta, treba da posotji select polje koje sadrzi sekcije dozvoljene
+prilikom preuzimanja TOP Stories sadrzaja putem NYTimes APIa. 
+
+Sajt prilikom svog ucitavanja treba da preuzme TOP Stories isecke clanaka (iz home sekcije po default) i prikaze ih na sledeci nacin:
+Svaki clanak na vrhu ima naslov, ispod naslova stoji byline (poravnat po desnoj strani), i kao sadrzaj
+prikazuje se isecak, odnosno apstrakt ili summary clanka. 
+Na dnu prikaza stoji copyright linija.
+
+Naslov clanka treba da je u vidu linka koji vodi ka odgovarajucoj NYTimes stranici.
+
+Navedeno ponasanje treba da se ostvari kao reakcija na klik dugmica, pri cemu se ucitavaju
+odgovarajuci clanci.
+
+Primer izgleda sajta koji ne koristi bootstrap dat je na slici 1.

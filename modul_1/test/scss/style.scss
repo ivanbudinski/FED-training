@@ -1,0 +1,361 @@
+@import 'mixins';
+@import 'vars';
+
+*{
+	margin: 0;
+	padding: 0;
+	@include box_sizing;
+	@include heading_default_size(16px);
+	font-family: $text_font_family;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: $header_font_family;
+}
+
+header{
+	text-align: center;
+	border-bottom: 1px solid $text_color;
+	line-height: 3em;
+
+	.main_nav{	
+		display: inline-block;
+		
+		ul{
+			list-style: none;
+			li{
+				display: inline-block;
+				padding: 0 1em;
+
+				img{
+					width: 2em;
+					position: relative;
+					top: 0.5em;
+				}
+
+				a{
+					text-decoration: none;
+					color:$text_color; 
+					&:hover{
+						color:$blue;	
+					}
+				}
+			}
+
+		}
+	}
+}
+
+.sec_1{
+	.wrapper{
+		background: $blue;
+		padding: 3em 15% 10em;
+		overflow: auto;
+		.box_1{
+			width: 50%;
+
+			&.left{
+				float: left;
+				text-align: center;
+				img{
+					width: 80%;
+				}
+			}
+
+			&.right{
+				float: right;
+
+				h2{
+					text-align: right;
+				}
+
+				p{
+					text-align: justify;
+					padding-left: 3em;
+				}
+
+				.button{
+					float: right;
+					margin-top: 2em;
+					a{
+						text-decoration: none;
+						background: $text_color;
+						border-radius: 10px;
+						color: $blue;
+						padding: 1em 2em;
+						line-height:  3em;
+						&:hover{
+							color:$yellow;
+						}
+					}
+				}
+			}	
+		}
+	}
+
+	.wrap{
+	 	height: 10em;
+	 	border-top: 5em solid $blue;
+		border-left: 100vw solid transparent;
+	}
+}
+
+.sec_2{
+	padding: 2em 15%;
+	text-align: center;
+
+	h1{
+		padding: 1em;
+		text-transform: uppercase;
+	}
+
+	.box_2{
+		width: 24%;
+		display: inline-block;
+		padding: 1em 0;
+
+		.button_2{
+			margin: 1em 0 2em;
+			a{
+				text-decoration: none;
+				background: $text_color;
+				border-radius: 10px;
+				color: $blue;
+				padding: 1em 2em;
+				line-height: 3em;
+					&:hover{
+					color:$yellow;
+				}
+			}
+		}
+	}
+}
+
+.sec_3{
+	background: $text_color;
+	padding: 2em 15%;
+	overflow: auto;
+
+	h1{
+		padding: 1em 0;
+		text-transform: uppercase;
+		text-align: center;
+		color: $yellow;
+	}
+
+	.box_3{
+		display: inline-block;
+		width: 49%;
+		text-align: right;
+	}	
+
+	.left_3{
+		float: left;
+
+		form{
+	
+			label{
+				padding-right: 1em;
+				color: $yellow;
+			}
+
+			input, textarea{
+				float: right;
+				width: 50%;
+			}
+
+			textarea{
+				resize:none;
+			}
+
+		}
+	}
+
+	.right_3{
+
+		h2,p{
+			color: white;
+		}
+		h2{
+			text-align: right;
+		}
+		p{
+			text-align: justify;
+			padding-left: 5em;
+		}
+		nav{
+			ul{
+				list-style: none;
+				li{	
+					display: inline-block;
+					padding: 1em 0.5em;
+					a{
+						text-decoration: none;
+						color: $blue;
+						&:hover{
+							color:$yellow;
+						}
+					}
+				}
+			}
+		}
+	}	
+	.button_3{
+		display: none;
+		text-align: center;
+		margin-top: 5em;
+		a{
+		
+			text-decoration: none;
+			padding: 0.5em 1em;
+			color: $text_color;
+			background: $blue;
+			border-radius: 10px;
+			
+			&:hover{
+				color:$yellow;
+			}
+		}
+	}			
+}
+
+footer{
+	color: $text_color;
+	text-align: center;
+	line-height: 3em;
+	img{
+		position: relative;
+		top: 0.5em;
+		width: 2em;
+	}
+
+}
+
+
+
+@include mediumDevices{
+	.sec_1{
+		.wrapper{
+			padding: 3em 10% 10em;
+			.box_1{
+				&.left{
+					width: 30%;
+					h1{
+						display: none;
+					}
+				}
+				&.right{
+					width: 70%;
+				}	
+			}
+		}
+	}
+
+	.sec_2{
+		.box_2{
+			width: 49%;
+		}
+	}
+
+	.sec_3{
+		.box_3{
+			width: 100%;
+		}	
+
+		.left_3{
+			padding-bottom: 2em;
+			form{
+				padding: 0 3em;
+
+			}
+		}
+	}	
+}
+
+@include smallDevices{
+
+	header{
+		.main_nav{	
+			display: block;
+			ul{
+				li{
+					display: block;
+					padding: 0 1em;
+					border-bottom: 1px solid $text_color;
+				}
+				.logo{
+					display: none;
+				}
+			}
+		}
+	}
+
+	.sec_1{
+		.wrapper{
+			.box_1{
+				width: 100%;
+				&.left{
+					float: none;
+					h1{
+						display: none;
+					}
+				}
+
+				&.right{	
+					float: none;
+					text-align: center;
+
+					h2{
+						text-align: center;
+					}
+
+					p{
+						display: none;
+					}
+
+					.button{
+						float: none;
+					}
+				}	
+			}
+		}
+	}
+
+	.sec_2{
+
+		.box_2{
+			width: 100%;
+		}	
+	}
+
+	.sec_3{
+
+		.box_3{
+			display: block;
+			width: 100%;
+			text-align: left;
+		}	
+
+		.left_3{
+			form{
+				input, textarea{
+					width: 100%;
+				}
+			}
+
+		}
+
+		.right_3{
+
+			h2,p,nav{
+				display: none;
+			}	
+		}
+		.button_3{
+			display: block;
+			margin-top: 15em;
+		}			
+	}
+}
+
+

@@ -1,0 +1,111 @@
+<html>
+<head>
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/ajax.js"></script>
+  <style>
+    .movie { background-color: #e4e4e4; padding: 5px; outline: 2px solid black;
+    display: none }
+    
+    .affix {
+          top: 0;
+          width: 100%;
+          margin-bottom: 0px;
+          z-index: 9999 !important;
+      }
+
+      .affix + .container-fluid {
+        padding-top: 70px;
+      }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+  <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Test</a>
+      </div>
+    <ul class="nav navbar-nav">
+      <li><a href="index.html">Forma</a></li>
+      <li class="active"><a href="#">Ajax</a></li>
+    </ul>
+</nav>
+<div class="container">
+  <div class="row">
+      <div class="col-md-12 movie">
+          <div class="col-md-2">
+              <img class="img-thumbnail" src="http://image.tmdb.org/t/p/w185/wHMKWqIkvJYFntCPHgQlcWYKav9.jpg"></img>
+          </div>
+          <div class="col-md-10">
+              <h1><a class="title" href="http://www.imdb.com/name/nm3053338/">Margot Robbie</a></h1>
+              <p class="text-justify" id="biography">Margot Elise Robbie (born 2 July 1990) is an Australian actress. She is known for her role as Donna Freedman on the soap opera Neighbours, which earned her two Logie Award nominations. In 2011, Robbie began starring as Laura Cameron in the ABC drama series Pan Am. Following Pan Am's cancellation, Robbie has appeared in the feature films About Time, The Wolf of Wall Street, Suicide Squad and many more.</p>
+              <span id="birthday"> Born: 1990-07-02 </span> <br/>
+              <span id="placeofbirth">Place of birth: Gold Coast, Australia </span> <br/>
+              
+          </div>
+      </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4 col-md-offset-3">
+      <select class="form-control" id="cbInput"> 
+        <option>Izaberite film</option>
+        <option value="">Film 1</option>
+        <option value="">Film 2</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-default" disabled="true" id="btnImdb" target="_blank">IMDb</button> 
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2 class="naslov">Most Popular Actors</h2>
+    </div>
+  </div>
+  <hr>
+  <div class="row posters">
+    <br>
+    <div class="row">
+          <div class="col-md-3">
+              <img src="http://image.tmdb.org/t/p/w300/z3sLuRKP7hQVrvSTsqdLjGSldwG.jpg" title="Monica Bellucci" id="28782" class="img-thumbnail">
+          </div>
+          <div class="col-md-3">
+              <img src="http://image.tmdb.org/t/p/w300/tDPS8QHdOmdmu400haPcYum8BHC.jpg" title="Shu Qi" id="21911" class="img-thumbnail">
+          </div>
+          <div class="col-md-3">
+              <img src="http://image.tmdb.org/t/p/w300/ylF5eBdfev0bgmFx8BFRmClqStM.jpg" title="Margot Robbie" id="234352" class="img-thumbnail">
+          </div>
+          <div class="col-md-3">
+              <img src="http://image.tmdb.org/t/p/w300/iqvYezRoEY5k8wnlfHriHQfl5dX.jpg" title="Paul Walker" id="8167" class="img-thumbnail">
+          </div>
+      </div>
+      <br>
+      <div class="row">
+          <div class="col-md-3">
+              <img src="http://image.tmdb.org/t/p/w300/tB1nE2LJH81f5UMiGhKCSlaqsF1.jpg" title="Emilia Clarke" id="1223786" class="img-thumbnail">
+          </div>
+          <div class="col-md-3">
+              <img src="http://image.tmdb.org/t/p/w300/idDAi1sjaHDIlDc78D8G9HaJ8le.jpg" title="Alexandra Daddario" id="2888" class="img-thumbnail">
+          </div>
+          <div class="col-md-3">
+              <img src="http://image.tmdb.org/t/p/w300/2iYXDlCvLyVO49louRyDDXagZ0G.jpg" title="Will Smith" id="424" class="img-thumbnail">
+          </div>
+          <div class="col-md-3">
+              <img src="http://image.tmdb.org/t/p/w300/8EueDe6rPF0jQU4LSpsH2Rmrqac.jpg" title="Scarlett Johansson" id="1245" class="img-thumbnail">
+          </div>
+      </div>
+  </div>
+  <hr>
+  <div class="col-md-12 text-center">
+    <ul class="pager">
+      <li><a href="#" id="prev">Previous</a></li>
+      <li><a href="#" id="next">Next</a></li>
+    </ul>
+  </div>
+  <br>
+</div>
+</body>
+</html>

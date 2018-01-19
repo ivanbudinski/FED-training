@@ -1,0 +1,30 @@
+Koriscenjem MoviDB APIa, implementirati skriptu koja se ponasao kao i script1.js
+Odnosno, napraviti sajt za prikaz i pretragu filmova. Pri inicjalnom ucitavanju
+na stranici treba da se prikaze prvih 20 najbolje ocenjenih filmova. Klikom na poster
+jednog od filmova treba da se prikaze div sa podacima o filmu. Div sadrzi sledece podatke:
+Kao link ka IMDB-u naziv filma i u zagradama godina produkcije.
+Ispod naslova nalaze se sledeci podaci:
+	Duzina trajanja u formatu "Xh XXmin"
+	Zanrovi odvojeni zarezom
+	Release date u formatiran po "sr" formatu "dd.mm.gggg"
+	Prosecna ocena filma, kao i broj glasova
+Ispod toga nalazi se paragraf sa opisom i tekstovi sa produkcionim kucama,
+budzetu i revenu (u americkom formatu), i tagline.
+Klikom na film nakon dobijanja podataka omogucuje se search similar dugme koje pronalzi sve slicne 
+filmove trenutnom filmu.
+
+U slucaju da su prikazani Top-rated movies, Upcoming movies ili now playing omoguciti paginaciju, tj. omoguciti
+da se preuzme sledecih 20 filmova iz te kategorije.
+
+Formatiranje datuma moguce je odraditi na sledeci nacin:
+var formatter1 = new Intl.DateTimeFormat("sr")
+formatter1.format(new Date("2015-01-02")) // rezulta je jednak "2.1.2015"
+
+Formatiranje valuta:
+var formatterUSD = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" })
+formatterUSD.format(100200300.40) // rezultat je jednak "$100,200,300.40"
+
+Za primer funkcionalnog sajta ukljuciti script1.js
+
+
+

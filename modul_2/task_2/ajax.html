@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<title>Zadatak za pripremu</title>
+	<script src="js/jquery-1.11.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"/>
+	<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/ajax.js"></script>
+	 <style>
+  	.affix {
+      	top: 0;
+    	  width: 100%;
+  	}
+
+  	.affix + .container-fluid {
+      padding-top: 70px;
+  	}
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+<div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Zadatak za pripremu</a>
+    </div>
+  <ul class="nav navbar-nav">
+    <li><a href="index.html">Forma</a></li>
+    <li class="active"><a href="#">Ajax</a></li>
+  </ul>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4 text-center">
+				<h1>Vremenska prognoza za gradove: </h1>
+				<table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Naziv grada (država)</th>
+                <th>Temperatura</th>
+                <th>Opis vremena</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>London (UK)</td>
+                  <td>18.00 <span class="glyphicons glyphicons-temperature"></span></td>
+                  <td>rain</td>
+                </tr>
+            </tbody>    
+        </table>
+			</div>
+		</div>
+    <div class="row">
+      <div class="col-md-12 ">
+        <div class="col-xs-2 col-xs-offset-4"><input type="text" id="inNaziv" class="form-control"></input></div>
+        <button id="btn-naziv" class="btn btn-info">Pretrazi po nazivu grada</button>
+      </div>
+    </div>
+	</div>
+</body>
+</html>

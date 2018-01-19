@@ -1,0 +1,57 @@
+Zadatak za pripremu
+
+index.html
+----------------------------------------------------
+Osnovno:
+Izvrsi validaciju forme upotrebom JavaScript-a. Validacija je sledeca:
+Nijedno polje ne sme da bude prazno.
+Polje drzava je validno ako je unet samo dvo-karakterni koda drzave.
+Polje grad je validno ako je ima grad unet velikim slovima (npr. BEOGRAD, NOVI SAD, NIS ...)
+
+
+Definisati funkciju callAlertFunction(parametar, callback), ona prima kao parametar objekat sa tekstom upozorenja i
+callback funkciju. Funkcija poziva callback funkciju prosledjivanjem primljenog objekta.
+
+Definisati funkciju ispisiPoruku(parametar) koja vrsi alert sa tekstom upozorenja iz primljenog objekta.
+
+Ukoliko polje grad nije validno, pozvati funkciju callAlertFunction kojoj se kao parametar prosledjuje objekat
+upozorenje i funkcija ispisiPoruku kao callback funkcija. Objekat upozorenje je definisan na sledeci nacin:
+
+
+Napredno:
+Upotrebo jQuery biblioteke omoguciti sledecu funkcionalnost:
+Kada korisnik napusti polje drzava ili grad u nevalidnom stanju, promeniti
+boju labele polja u crvenu. Ukoliko ih napusti u validnom stanju, boja teksta treba da se vrati na orginalnu boju.
+Samo za polje drzava: pored promene boje labele, onemoguciti submit dugme dodavanjem atributa "disabled", true.
+Ukoliko napusti u validnom stanju omoguciti submit dugme izmenom atributa: "disabled", false. true i false su boolean vrednosti.
+
+Ako je forma validna, prelazi se na stranicu ajax.html.
+
+ajax.html
+---------------------------------------------------------
+Osnovno:
+Prilikom ucitavanja stranice potrebno je popuniti tabelu sa vremenskom prognozom za navedeni niz id-a gradova.
+Za svaki grad potrebno je preuzeti sledece vrednosti: Naziv grada (drzava), Temperatura (u celzijusima), Opis vremena.
+Za dobijanje podataka o gradovima (u JSON formatu) koristi sledeci openweather api endpoint:
+http://api.openweathermap.org/data/2.5/group? (http://openweathermap.org/current)
+Kao parametre navedeni api prima:
+	id, format id={id prvog grada},{id drugog grada} npr: id=1234,23321,2134
+	appid, appid={api key} , iskorisit api key koji je naveden u ajax.js
+
+Postojece podatke o temperaturi gradova izbrisati iz tabele. Dobijene podatke o gradovima uneti u tabelu.
+
+Napredno:
+Ispod tabele nalazi se input polje i dugme Pretrazi po nazivu grada. Kada se klikne pretrazi po nazivu grada
+potrebno je dobiti temperaturu za grad sa nazivom koji je unesen u input polje. Za to koristi:
+
+"http://api.openweathermap.org/data/2.5/weather?"
+Kao parametre prima:
+q={naziv grada} npr.: q=Novi Sad
+appid={appi key}
+
+Ako se u tabeli nalazi navedeni grad, odnosno red sa podacima o navedenom gradu, potrebno je izmeniti sadrzaj tog reda. Tj. izmeniti podatke u celijama (td) za temperaturu i opis vremena u tom redu.
+Ako grad ne postoji u tabeli, tj. red sa podacima o tom gradu ne postoji, potrebno je dodati novi red u tabelu.
+Za identifikaciju da li red sadrzi podatke o gradu moguce je koristiti id grada.
+
+
+	

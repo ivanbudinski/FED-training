@@ -1,0 +1,22 @@
+{
+  "name": "Warehouse Operations",
+  "description": "this web application represents the support of warehouse operations",
+  "main": "index.html",
+  "authors": [
+    "ivan"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/js",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.8",
+    "angular-ui-router": "^0.3.2"
+  }
+}

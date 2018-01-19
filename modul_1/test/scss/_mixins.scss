@@ -1,0 +1,51 @@
+
+@mixin heading_default_size($fontSize){
+	h1{font-size:$fontSize*2;}
+	h2{font-size:$fontSize*1.5;}
+	h3{font-size:$fontSize*1.33;}
+	h4{font-size:$fontSize*1;}
+	h5{font-size:$fontSize*.83;}
+	h6{font-size:$fontSize*.67;}
+}
+
+
+
+@mixin box_sizing {
+	-webkit-box-sizing: border-box;
+  	   -moz-box-sizing: border-box;
+  			box-sizing: border-box;
+}
+
+@mixin background_size {
+	 -webkit-background-size:cover;
+		-moz-background-size:cover;  
+		     background-size:cover; 
+}
+
+@mixin column_count($column_number){
+	-webkit-column-count: $column_number; 
+       -moz-column-count: $column_number;  
+    		column-count: $column_number;
+}
+
+@mixin clearfix {
+	&:before, &:after {
+	    content: "";
+	    display: table;
+	}
+	&:after {
+	    clear: both;
+	}
+}
+
+@mixin mediumDevices{
+	@media only screen and (min-width:#{$small_devices}) and (max-width:#{$large_devices}){
+		@content;
+	}
+}
+
+@mixin smallDevices{
+	@media  only screen and (max-width:#{$small_devices}){
+		@content;
+	}
+}

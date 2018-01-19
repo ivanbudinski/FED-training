@@ -1,0 +1,23 @@
+ZADATAK: 
+	Korišćenjem HTML i Sass tehnologija realizovati HTML stranicu prikazanu na slikama.
+	Implementirati sledeće zahteve:
+
+	1.	Sass kod modularizovati minimalno tako da se korišćene promenljive i mixini pišu u posebnim
+		sass datotekama koje se uključuju u glavni fajl.
+	2.	Sve boje (obavezno), fontove (neobavezno) kao i ostale korisne vrednosti (po sopstvenoj proceni)
+		izdvojiti u sass promenljive.
+	3.	Sva korišćena vendor-prefixed css pravila izdvojiti u mixine.
+	4.	Realizovati sledeće efekte:
+		a.	Kada se mišem pređe preko likova u glavnoj navigaciji, boja linka treba da pređe u plavu boju.
+		b.	Kada se mišem pređe preko dugmića i linkova (koji nisu u glavnoj navigaciji), postaviti boju teksta na zutu.
+        c.  Realizovati ukosenu donju ivicu na glavnoj sekciji.
+	5.	Realizovati responsive verzije stranice kao na priloženim slikama.
+
+BOJE: 
+	Plava: #528b8b 
+	Boja teksta: #282828 
+    Zuta: #fdf4c1
+
+WEB FONTOVI: 
+    Roboto Condensed
+    Baloo Bhai

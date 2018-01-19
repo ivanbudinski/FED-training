@@ -1,0 +1,65 @@
+
+<div class="container-fluid">
+	<div class="tableOne">
+		<div class="row">
+			<div class="col-sm-5">Transaction Type: {{dc.document.transactionType}}</div>
+			<div class="col-sm-5">Business Partner</div>
+			<div class="col-sm-2">Status: {{dc.document.status}}</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5">Date of Creation: {{dc.document.dateOfCreation|date:'fullDate'}}<br/>
+			<span ng-show="dc.document.dateOfRecording?true:false">Date of Recording: {{dc.document.dateOfRecording|date:'fullDate'}}</span>
+			</div>
+			<div class="col-sm-5">
+				{{dc.document.businessPartner.name}}<br/>
+				{{dc.document.businessPartner.city}}, {{dc.document.businessPartner.address}}
+			</div>
+			<div class="col-sm-2"><button ng-show="dc.document.status=='opened'?true:false" class="btn btn-primary" ng-click="dc.recDocument()">Record Document</button></div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div ng-class="{'col-sm-9':dc.document.status=='opened','col-sm-12':dc.document.status=='recorded'}">
+			<table class="table table-striped table-bordered" >
+				<thead>
+					<tr><th colspan="4" style="text-align: center;">Document Items</th></tr>
+					<tr>
+						<th>Article</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Total Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="items in dc.documentItems" ">
+						<td ng-repeat="article in dc.articles" ng-if="items.article==article.code">{{article.name}}</td>
+						<td>{{items.price}}</td>
+						<td>{{items.quantity}}</td>
+						<td>{{items.price*items.quantity}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-sm-3" ng-show="dc.document.status=='opened'">
+			<h2>Add new item</h2>
+			<form role='form'>
+				<div class="form-group">
+					<label for="article">Articles</label>
+					<select class="form-control" id='article' name='article' ng-options="article.code as article.name for article in dc.articles " ng-model='dc.newItem.article'>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for='price'>Price</label>
+					<input class="form-control" id="price" type="number" ng-model="dc.newItem.price"/>
+				</div>
+				<div class="form-group">	
+					<label for="quantity">Quantity</label>
+					<input class="form-control" id='quantity' type="number" ng-model="dc.newItem.quantity" />
+				</div>
+				<button class="btn btn-primary" ng-click="dc.addItem()">Save</button>
+			</form >
+		</div>
+	</div>
+</div>
+
+

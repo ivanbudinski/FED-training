@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  color: #a7a7a7;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+h1, h2, h3, h4 {
+  color: #ff4000; }
+
+header {
+  border-bottom: 1px solid #a7a7a7; }
+  header nav ul {
+    line-height: 2.5em;
+    text-align: center; }
+    header nav ul li {
+      display: inline-block; }
+      header nav ul li a {
+        text-decoration: none;
+        color: inherit;
+        padding: 11px; }
+        header nav ul li a:hover {
+          background: #ff4000; }
+
+main {
+  width: 85%;
+  margin: 0 auto; }
+
+.intro {
+  background: url("../images/bkg1.jpg") center top no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 60vh; }
+  .intro .center {
+    text-align: center;
+    position: relative;
+    top: 22vh; }
+    .intro .center .introBox {
+      display: inline-block;
+      text-align: center; }
+      .intro .center .introBox h1 {
+        border-bottom: 1px solid #ff4000; }
+
+.services {
+  text-align: center;
+  padding-top: 20px; }
+  .services h2 {
+    border-bottom: 1px solid #ff4000; }
+  .services .containerServices {
+    width: 75%;
+    margin: 0 auto; }
+    .services .containerServices p {
+      padding-top: 20px; }
+    .services .containerServices .columnParagraph {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      -o-column-count: 2;
+      column-colunt: 2;
+      padding-top: 40px;
+      text-align: justify; }
+    .services .containerServices .containerLink {
+      padding-top: 20px; }
+      .services .containerServices .containerLink .boxLink {
+        border: 1px solid #007fff;
+        display: inline-block;
+        width: 31%;
+        padding: 20px; }
+        .services .containerServices .containerLink .boxLink:not(:first-child) {
+          margin-left: 5px; }
+        .services .containerServices .containerLink .boxLink h4 {
+          text-transform: uppercase;
+          padding-bottom: 20px; }
+        .services .containerServices .containerLink .boxLink img {
+          border-radius: 50%;
+          width: 100px; }
+        .services .containerServices .containerLink .boxLink p {
+          margin: 0 auto; }
+
+.contact {
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px; }
+  .contact h2 {
+    border-bottom: 1px solid #ff4000; }
+  .contact .containerContact {
+    text-align: left; }
+    .contact .containerContact .contactBox {
+      display: inline-block;
+      width: 49%;
+      padding-bottom: 40px; }
+      .contact .containerContact .contactBox form {
+        width: 100%;
+        padding-top: 10px;
+        padding-right: 20px; }
+        .contact .containerContact .contactBox form label {
+          color: #ff4000; }
+        .contact .containerContact .contactBox form input {
+          border: 1px solid #ff4000;
+          float: right;
+          width: 60%;
+          line-height: 1.5em; }
+          .contact .containerContact .contactBox form input[type="submit"] {
+            width: 30%;
+            background-color: #ff4000;
+            color: #fff; }
+        .contact .containerContact .contactBox form textarea {
+          float: right;
+          width: 60%;
+          border: 1px solid #ff4000;
+          resize: none; }
+      .contact .containerContact .contactBox img {
+        width: 100%; }
+
+footer {
+  background-color: #007fff;
+  text-align: center;
+  color: white;
+  height: 1.5em;
+  line-height: 1.5em; }
+
+@media screen and (max-width: 756px) {
+  main {
+    width: 100%; }
+
+  .services .containerServices .columnParagraph {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    -o-column-count: 1;
+    column-colunt: 1;
+    padding: 20px 0 0 0; }
+  .services .containerServices .containerLink .boxLink {
+    width: 100%; }
+    .services .containerServices .containerLink .boxLink:not(:first-child) {
+      margin-left: 0;
+      margin-top: 20px; }
+
+  .contact .containerContact .contactBox {
+    padding-bottom: 0;
+    width: 100%;
+    padding-top: 20px; }
+    .contact .containerContact .contactBox img {
+      display: none; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Warehouse Operations</title>
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+	<link href="assets/css/font-awesome.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="favicon.ico" />
+	<script src="./assets/js/angular/angular.js"></script>
+	<script src="./assets/js/angular-ui-router/release/angular-ui-router.js"></script>
+
+	<script src="./app/app.module.js"></script>
+
+	<script src="./app/components/core/core.module.js"></script>
+	<script src="./app/components/core/core.route.js"></script>
+
+	<script src="./app/components/document/document.module.js"></script>
+	<script src="./app/components/document/document.route.js"></script>
+	<script src="./app/components/document/document.service.js"></script>
+	<script src="./app/components/document/document.directive.js"></script>
+	<script src="./app/components/document/documents-list.controller.js"></script>
+	<script src="./app/components/document/document.controller.js"></script>
+</head>
+<body ng-app="warehouse">
+	<div class="container-fluid">
+		<div>
+			<div ui-view="header"></div>
+			<div ui-view="content"></div>
+		</div>
+	</div>
+</body>
+</html>

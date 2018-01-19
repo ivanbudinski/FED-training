@@ -1,0 +1,95 @@
+FED 6 Kurs: Parcijalni test
+----------------------------------------------------------------------------------------------------------------------
+ZADATAK:
+	index.html:
+		--------------
+			Izvršiti validaciju forme upotreboj JavaScript tehnologije.	
+			Sva polja u formi moraju biti unešena kako bi se forma submitovala.
+			
+			Vrednost polja Nacin placanja ima dve opcije: Kartica ili Gotovina
+			Prilikom menjanja opcija selecta, paragraf select_tip koji inicijalno ima vrednost:
+			"U selectu Tip molimo odaberite : "
+			dopuniti sa podacima iz objekta "upozorenje" koji je dat u skripta.js fajlu.
+
+			Tako da ako se u prvom selectu odabere Kartica u pomenutom paragrafu trebao bi da bude ispis:
+			"U selectu Tip molimo odaberite : Master, Visa"
+
+			ili ako je odabrana gotovina, u istom tom paragrafu treba da pise:
+			"U selectu Tip molimo odaberite : Prazno polje"
+
+			Objekat koji sadrzi poruke upozorenja definisan je na sledeći način:
+			var upozorenje = {
+				kartica: ["Master", "Visa"],
+				gotovina: "Prazno polje"
+			};
+
+			Prilikom submita forme proveriti i da li se vrednosti u selectima poklapaju.
+			Naime, ako je u selectu Nacin placanja odabrana "Kartica" u selectu Tip 
+			mora biti odabrana ili Master ili Visa opcija.
+			Ukoliko je u selectu Nacin placanja odabrana "Gotovina" u selectu Tip
+			mora biti odabrana prazna opcija.
+			Forma se ne moze submitovati ukoliko se pomenute vrednosti ne poklapaju.
+			
+			Napredno
+			---------------------
+			Ako korisnik izabere nacin placanja Kartica, u formu dodati polje Validation Code u koji se unosi trocifreni broj.
+			A ukoliko izabere gotovina, dodaje se teksutalno polje valuta u koje se mora uneti barem dva karaktera, svi karakteri su napisani velikim slovima. Forma se ne moze submitovati ukoliko novo polje nije validno.
+
+		--------------
+			ajax.html
+
+			TheMoviDB API osnovini url: https://api.themoviedb.org/3
+			API Key: api_key=d6567c81b3f90902e0886a226056f0d6
+			
+			Odmah pri ucitavanju stranice preuzeti listu najpopuarnijih osoba (Persons) koristenjem themoviedb API-ja. Za ucitavenje
+			iskoristiti Get Popular People endpoint (https://developers.themoviedb.org/3/people/get-popular-people)
+
+			Dodatak na osnovi url: /person/popular
+			Endpoint moze da primi sledece parametre
+				api_key  -- Obavezan
+				language
+				page
+
+			Nakon klika na odredjenu osobu ubaciti u select filmove po kojima je ta osoba poznata. Za to iskorititi Get Person Movie Credits 
+			endpoint (https://developers.themoviedb.org/3/people/get-person-movie-credits)
+
+			Dodatak na osnovi url: /person/{person_id}/movie_credits
+			
+			U URLu umesto {person_id} treba da stoji konkretan id korisnika.
+			Parametri enpointa su:
+				api_key  -- Obavezan
+				language
+
+			I popuniti paragraf sa biografijom osobe. Za preuzimanje biografije moguce je iskorititi Get Person Details endpoint (https://developers.themoviedb.org/3/people/get-person-details) 
+
+			Dodatak na osnovi url: /person/{person_id}
+
+			U URLu umesto {person_id} treba da stoji konkretan id korisnika.
+			Navedeni endpoint moze da primi sledece parametre:
+				api_key  -- Obavezan
+				language
+				append_to_response
+
+			Kada se odabere vrednost iz selecta, proveriti da li navedeni film ima IMDb id. Ako ima omoguciti dugme IMDb. Kada korisnik
+			klikne na dugme IMDb potrebno je otvoriti novi tab u browseru u kojem se ucitava IMDb stranica. Link ka filmu se formira na sledeci nacin:
+			
+			"http://www.imdb.com/title/" + imdb_id
+
+			Za to iskoristiti Get Movie Details endpoint (https://developers.themoviedb.org/3/movies/get-movie-details)
+
+			Dodatak na osnovi url: /movie/{movie_id}
+
+			U URLu umesto {movie_id} treba da stoji konkretan id korisnika.
+			Endpoint moze da primi sledece parametre:
+				api_key  -- Obavezan
+				language
+				append_to_response
+
+			Za otvaranje novog tab-a iskoristiti openInNewTab(url) funkciju. Npr. openInNewTab("http://www.imdb.com/title/tt0993846/")
+
+
+			Napredno
+			------------------------------------
+			Omoguciti koriscenje bootstrap pagera (next i prev) za prikaz sledecih (prethodnih) 20 osoba.
+			U biografiji omoguciti da ispis datuma rodjenje bude u formatu: Mesec dd, yyyy (npr: July 2, 1990).
+			Ukoliko glumac ima deathday prikazati i to.

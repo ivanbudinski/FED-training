@@ -1,0 +1,8 @@
+Server:
+- razmotati
+- tamo gde je package.json
+	- npm install
+	- npm start
+- sve cuvati u src/public
+
+http://localhost:3000/       -/start app/-

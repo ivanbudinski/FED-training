@@ -1,0 +1,80 @@
+<div>
+    <ul class="pagination">
+        <li ng-class="{'disabled': dlc.params.page == 1}">
+            <a class="link" ng-href aria-label="Previous" ng-click="dlc.pagination.changePage(dlc.params.page - 1)">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li ng-repeat="page in dlc.pagination.iterator track by $index" ng-class="{'active':($index+1) == dlc.params.page}">
+            <a class="link" ng-href ng-click="dlc.pagination.changePage($index+1)">{{$index+1}}</a>
+        </li>
+        <li ng-class="{'disabled': dlc.params.page == dlc.pagination.iterator.length}">
+            <a class="link" ng-href aria-label="Next" ng-click="dlc.pagination.changePage(dlc.params.page + 1)">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+    <div class="checkBoxPosition">
+        <document-directive data="dlc.tableSetting" ng-show="!dlc.tableSetting.showButton" ></document-directive>
+        <button class="btn btn-primary" ng-show="dlc.tableSetting.showButton" ng-click='dlc.tableSetting.toggleShow()' href="">Open table setting</button>
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr class="active">
+                <th ng-show="dlc.tableSetting.dateOfCreation">
+                    <a class="link" ng-href ng-click="dlc.tableChanged('dateOfCreation')">
+                        Date of Creation
+                        <i class="fa fa-sort disabled" ng-hide="dlc.params.sort == 'dateOfCreation'"></i>
+                        <i class="fa fa-sort-desc" ng-show="dlc.params.sort == 'dateOfCreation' && dlc.params.sortDirection == 'asc'"></i>     
+                        <i class="fa fa-sort-asc" ng-show="dlc.params.sort == 'dateOfCreation' && dlc.params.sortDirection == 'desc'"></i>
+                    </a>
+                </th>
+                <th ng-show="dlc.tableSetting.dateOfRecording">
+                    <a class="link" ng-href ng-click="dlc.tableChanged('dateOfRecording')">
+                        Date of Recording
+                        <i class="fa fa-sort disabled" ng-hide="dlc.params.sort == 'dateOfRecording'"></i>
+                        <i class="fa fa-sort-desc" ng-show="dlc.params.sort == 'dateOfRecording' && dlc.params.sortDirection == 'asc'"></i>     
+                        <i class="fa fa-sort-asc" ng-show="dlc.params.sort == 'dateOfRecording' && dlc.params.sortDirection == 'desc'"></i>
+                    </a>
+                </th>
+                <th ng-show="dlc.tableSetting.status">
+                    <a class="link" ng-href ng-click="dlc.tableChanged('status')">
+                        Status
+                        <i class="fa fa-sort disabled" ng-hide="dlc.params.sort == 'status'"></i>
+                        <i class="fa fa-sort-desc" ng-show="dlc.params.sort == 'status' && dlc.params.sortDirection == 'asc'"></i>     
+                        <i class="fa fa-sort-asc" ng-show="dlc.params.sort == 'status' && dlc.params.sortDirection == 'desc'"></i>
+                    </a>
+                </th>
+                <th ng-show="dlc.tableSetting.transactionType">
+                    <a class="link" ng-href ng-click="dlc.tableChanged('transactionType')">
+                        Transaction Type
+                        <i class="fa fa-sort disabled" ng-hide="dlc.params.sort == 'transactionType'"></i>
+                        <i class="fa fa-sort-desc" ng-show="dlc.params.sort == 'transactionType' && dlc.params.sortDirection == 'asc'"></i>     
+                        <i class="fa fa-sort-asc" ng-show="dlc.params.sort == 'transactionType' && dlc.params.sortDirection == 'desc'"></i>
+                    </a>
+                </th>
+                <th ng-show="dlc.tableSetting.businessPartner">
+                    Business Partner
+                </th>
+                <th ng-show="dlc.tableSetting.businessPartnerLocation">
+                    Business Partner Location
+                </th>
+                <th ng-show="dlc.tableSetting.year">
+                    Year
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-click="dlc.editDocument(document._id)" class="link" ng-repeat="document in dlc.documents">
+            <td ng-show="dlc.tableSetting.dateOfCreation">{{document.dateOfCreation|date:'MMM dd, yyyy'}}</td>
+            <td ng-show="dlc.tableSetting.dateOfRecording">{{document.dateOfRecording|date:'MMM dd, yyyy'}}</td>
+            <td ng-show="dlc.tableSetting.status">{{document.status}}</td>
+            <td ng-show="dlc.tableSetting.transactionType">{{document.transactionType}}</td>
+            <td ng-show="dlc.tableSetting.businessPartner">{{document.businessPartner.name}}</td>
+            <td ng-show="dlc.tableSetting.businessPartnerLocation">{{document.businessPartner.city}}, {{document.businessPartner.address}}</td>
+            <td ng-show="dlc.tableSetting.year">{{document.year}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>NY Times API</title>
+	<link rel="stylesheet" type="text/css" href="css/search.css"/>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<div class="container">
+		<label>Search: </label><input type="text" id="query" value=""></input>
+		<button type="button" id="btnSearch">Search</button>
+		<br/>
+		<br/>
+		<select name="select" id="select">
+			<option value="home">Home</option>
+			<option value="opinion">Opinion</option>
+			<option value="world">World</option>
+			<option value="national">National</option>
+			<option value="politics">Politics</option>
+			<option value="upshot">Upshot</option>
+			<option value="nyregion">NY Region</option>
+			<option value="business">Business</option>
+			<option value="technology">Technology</option>
+			<option value="science">Science</option>
+			<option value="health">Health</option>
+			<option value="sports">Sports</option>
+			<option value="arts">Arts</option>
+			<option value="books">Books</option>
+			<option value="movies">Movies</option>
+			<option value="theater">Theater</option>
+			<option value="sundayreview">Sunday Review</option>
+			<option value="tmagazine">tmagazine</option>
+			<option value="food">Food</option>
+			<option value="travel">Travel</option>
+			<option value="magazine">Magazine</option>
+			<option value="realestate">Realestate</option>
+			<option value="automobiles">Automobiles</option>
+			<option value="obituaries">Obituaries</option>
+			<option value="insider">Insider</option>
+		</select>
+		<button type="button" id="btnTop">Get Top Stories</button>
+		<br/>
+		<br/>
+
+		<div id="stories"></div>
+		<div id="copyRight"></div>
+	</div>
+</body>
+</html>
